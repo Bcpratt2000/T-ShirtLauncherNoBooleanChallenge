@@ -36,11 +36,12 @@ public class TankDrive {
 	}
 
 	private double applyDeadzone(double input, double deadzone) {
-		if (Math.abs(input) >= deadzone) {
-			return input;
-		} else {
+		try {
+			return Math.copySign((Math.pow(Math.sqrt(input - deadzone), 2)*(1+1.4*deadzone)), input);
+		} catch (Exception e) {
 			return 0;
 		}
+
 	}
 
 	private double applyCoeff(double input, double coeff) {

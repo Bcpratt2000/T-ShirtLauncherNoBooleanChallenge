@@ -45,11 +45,11 @@ public class Extreme3DPro {
 		return joy.getPOV();
 	}
 	
-	public boolean getTrigger() {
-		return joy.getRawButton(1);
+	public int getTrigger() {
+		return joy.getRawButton(1)? 1 : 0;
 	}
 	
-	public boolean getButton(int button) {
-		return joy.getRawButton(button);
+	public int getButton(int button) {
+		return joy.getRawButton(button)? 1 : 0;
 	}
 }
